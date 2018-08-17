@@ -46,7 +46,7 @@ const DashedCircle = styled.circle`
 
 export default (props, state) => {
   const { max, yRefreshing, y, phase } = state
-  const { zIndex, color, bgColor } = props
+  const { zIndex, color, bgColor, topMargin } = props
   const p = Math.atan(y / max)
   const pMax = Math.atan(yRefreshing / max)
   const r = Math.PI * 10 * 2
@@ -58,7 +58,7 @@ export default (props, state) => {
       key='pull'
       zIndex={zIndex}
       style={{
-        top: Math.max(refreshed ? Math.atan(1) : p, 0) * max - 10,
+        top: Math.max(refreshed ? Math.atan(1) : p, 0) * max - 10 + (topMargin || 0),
         transform: `translate(-50%, -100%) scale(${refreshed ? p : 1},${refreshed ? p : 1})`,
         backgroundColor: bgColor
       }}
