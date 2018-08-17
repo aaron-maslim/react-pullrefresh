@@ -97,6 +97,7 @@ export default class PullRefresh extends Component {
   render() {
     const {
       zIndex,
+      topMargin,
       render,
       bgColor,
       color,
