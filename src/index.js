@@ -110,7 +110,7 @@ export default class PullRefresh extends Component {
     const PullRefreshComponent = render
     const Container = as
     return (
-      <React.Fragment>
+      <div className="pull-refresh">
         <Container
           {...props}
           onScroll    ={disabled ? undefined : ::this.onScroll}
@@ -124,7 +124,7 @@ export default class PullRefresh extends Component {
           { children }
         </Container>
         { render(this.props, this.state) }
-      </React.Fragment>
+      </div>
     )
   }
 }
